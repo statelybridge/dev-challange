@@ -15,7 +15,7 @@ export class HttpService {
     protected snack_pop_up: SnackBar
   ) { }
 
-  post(route: string, customer: Customer) {
+  post(route: string, customer: Customer | any) {
 
 
     return new Promise<Customer>((resolve, reject) => {

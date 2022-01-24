@@ -22,6 +22,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { I18nModule } from './i18n/i18n.module';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTableModule,
     MatSidenavModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    I18nModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
