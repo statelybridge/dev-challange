@@ -6,7 +6,7 @@ import { CustomerViewComponent } from './components/customer-view/customer-view.
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'customerAdd',
+    redirectTo: 'customerView',
     pathMatch: 'full'
   },
   { path: 'customerAdd', component: CustomerAddComponent },
