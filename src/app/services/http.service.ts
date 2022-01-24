@@ -26,7 +26,7 @@ export class HttpService {
           if (data == null) {
             this.snack_pop_up.showSnackBar("Server failure")
           }
-          this.snack_pop_up.showSnackBar("Customer Added")
+          this.snack_pop_up.showSnackBar("Customer posted")
           resolve(data)
         })
         .catch((err) => {
