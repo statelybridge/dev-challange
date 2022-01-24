@@ -5,7 +5,7 @@
     </mat-list>
     <mat-list role="list">
       <mat-selection-list #shoes [multiple]="false">
-        <mat-list-option *ngFor="let childComponent of userProfile" [value]="childComponent.routeName"
+        <mat-list-option *ngFor="let childComponent of userProfile" [value]="childComponent.routeName | translate"
           (click)="loadUserInformationComponent(childComponent.routeName)">
           {{childComponent.displayName}}
         </mat-list-option>
