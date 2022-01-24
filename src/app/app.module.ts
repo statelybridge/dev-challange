@@ -21,7 +21,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HomeComponent } from './components/home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { I18nModule } from './i18n/i18n.module';
 
 @NgModule({
@@ -50,8 +50,10 @@ import { I18nModule } from './i18n/i18n.module';
     MatDialogModule,
     I18nModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] },
+  ], bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
