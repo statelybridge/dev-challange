@@ -18,13 +18,17 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HomeComponent } from './components/home/home.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerAddComponent,
     CustomerDetailComponent,
-    CustomerViewComponent
+    CustomerViewComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent],

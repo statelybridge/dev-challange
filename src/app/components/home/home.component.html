@@ -1,0 +1,16 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <mat-list role="list">
+      <mat-selection-list #shoes [multiple]="false">
+        <mat-list-option *ngFor="let childComponent of userProfile" [value]="childComponent.routeName"
+          (click)="loadUserInformationComponent(childComponent.routeName)">
+          {{childComponent.displayName}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- <app-user-information></app-user-information> -->
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -4,13 +4,8 @@ import { CustomerAddComponent } from './components/customer-add/customer-add.com
 import { CustomerViewComponent } from './components/customer-view/customer-view.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'customerView',
-    pathMatch: 'full'
-  },
-  { path: 'customerAdd', component: CustomerAddComponent },
-  { path: 'customerView', component: CustomerViewComponent },
+   { path: 'customeradd', component: CustomerAddComponent },
+  { path: 'customerview', component: CustomerViewComponent },
 ];
 
 @NgModule({
