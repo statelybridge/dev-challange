@@ -5,6 +5,8 @@ import { Customer } from 'src/app/interfaces/Customer';
 import { HttpService } from 'src/app/services/http.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 @Component({
   selector: 'app-customer-view',
@@ -25,7 +27,8 @@ export class CustomerViewComponent implements OnInit {
 
   constructor(
     private http: HttpService,
-    private route_: Router
+    private route_: Router,
+    public dialog: MatDialog
   ) {
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource();
@@ -35,6 +38,7 @@ export class CustomerViewComponent implements OnInit {
     this.http.get('api/customer/')
       .then((data: any) => {
         console.log(data);
+        this.CUSTOMER_DATA = data;
         this.dataSource = new MatTableDataSource<Customer>(data);
         this.dataSource.paginator = this.paginator
         this.dataSource.sort = this.sort;
@@ -47,9 +51,15 @@ export class CustomerViewComponent implements OnInit {
   }
 
   specificCustomerDetails(index: number) {
-    this.route_.navigate([
-      `./details-customer`, { "customer": JSON.stringify(this.CUSTOMER_DATA[index]) }
-    ]);
+    console.log(this.CUSTOMER_DATA[index])
+    this.dialog.open(CustomerDetailComponent, {
+      width: '450px',
+      data: this.CUSTOMER_DATA[index],
+    });
+
+    // this.route_.navigate([
+    //   `./details-customer`, { "customer": JSON.stringify(this.CUSTOMER_DATA[index]) }
+    // ]);
   }
 }
 

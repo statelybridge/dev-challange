@@ -1,1 +1,11 @@
-<p>customer-detail works!</p>
+<h1 mat-dialog-titl>Customer Details!</h1>
+<div mat-dialog-content>
+  <p><strong>Id: </strong>{{data.id}}</p>
+  <p><strong>Name: </strong>{{data.name}}</p>
+  <p><strong>Address: </strong>{{data.address}}</p>
+  <p><strong>Email: </strong>{{data.email}}</p>
+  <p><strong>Phone: </strong>{{data.phone}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Close</button>
+</div>
